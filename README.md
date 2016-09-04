@@ -19,7 +19,7 @@ Requires providing a CSV file of desired listings to add, will also dig up reply
   
 - **craigslist.xml** - XML file create by xmlMaker.py
 
-## Direction
+## Directions
 - Meet dependencies - pip install bs4
 - Create the CSV of URLS 
 - Run xmlMaker.py
