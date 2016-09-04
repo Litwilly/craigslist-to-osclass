@@ -9,7 +9,7 @@ Requires providing a CSV file of desired listings to add, will also dig up reply
 ## Files
 - **xmlMaker.py** - python script that builds the XML file used by "Ad Importer" plugin
 
-- **urls.csv** - CSV file used by xmlMaker.py
+- **urls.csv** - CSV file used by xmlMaker.py *sample file*
   - Column A - Listing URL
   - Column B - Category *#must match your category spelling or a new category will be created*
   - Column C - City *#will use craigslist region if nothing is present*
@@ -18,3 +18,9 @@ Requires providing a CSV file of desired listings to add, will also dig up reply
   - Column F - Phone Number *#Appended after content*
   
 - **craigslist.xml** - XML file create by xmlMaker.py
+
+## Direction
+- Meet dependencies - pip install bs4
+- Create the CSV of URLS 
+- Run xmlMaker.py
+- Goto osclass admin / Plugins / Ad Importer / upload the craigslist.xml file
