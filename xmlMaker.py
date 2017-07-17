@@ -5,6 +5,8 @@ import urllib
 import csv
 import re
 
+email=''		  
+
 #start the xml
 listings = ET.Element("listings")
 
@@ -84,15 +86,16 @@ for row in csv_f:
         ET.SubElement(listing, "custom", name="new-custom-field").text = row[4]
 
     # Images
-    img = soup.find_all("img")[0].get('src') #if only one image
+    img = soup.find_all("div", {"class": "slide first visible"}) #single image
     imgs = soup.find_all("a", {"class": "thumb"}) #multiple images
     if len(imgs) > 1:
         for pi in imgs:
             pic = pi.get('href')
             ET.SubElement(listing, "image").text = pic
     elif len(img) > 0:
-        ET.SubElement(listing, "image").text = img
-
+        for pi2 in img:
+            pic2 = pi2.find('img').get('src')
+            ET.SubElement(listing, "image").text = pic2
 
     # time
     time = soup.find_all("time")[0].get('datetime')
